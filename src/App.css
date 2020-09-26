@@ -38,6 +38,7 @@
 }
 
 table {
+  width: 100%;
   border-collapse: collapse;
 }
 
@@ -60,5 +61,5 @@ table {
 }
 
 .today {
-  background-color: tomato;
+  background-color: ghostwhite;
 }
