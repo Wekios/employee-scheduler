@@ -36,3 +36,29 @@
     transform: rotate(360deg);
   }
 }
+
+table {
+  border-collapse: collapse;
+}
+
+.cell {
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  text-align: center;
+  width: 14.2%;
+}
+
+.weekdays {
+  background-color: #ccc;
+  padding-top: 5px;
+  padding-top: 5px;
+}
+
+.day {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.today {
+  background-color: tomato;
+}
