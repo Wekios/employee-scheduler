@@ -1,3 +1,3 @@
 export * from "./Employee";
-export * from "./EmployeeList";
+export * from "./EmployeesList";
 export * from "./EmployeeWeek";

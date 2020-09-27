@@ -9,7 +9,7 @@ const colorMap = {
 };
 
 export function Shift({ time, position, className }) {
-  className = cn("mx-2 py-4", colorMap[position.color]);
+  className = cn("mx-2 p-4", colorMap[position.color]);
 
   return (
     <div className={className}>

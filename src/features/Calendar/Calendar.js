@@ -1,25 +1,18 @@
 import React from "react";
 
 import { Header } from "./Header";
-import { EmployeeList } from "features/Employee";
-import { useDate } from "./useDate";
-import { Controls } from "./Controls";
+import { EmployeesList } from "features/Employees";
 
-export function Calendar() {
-  const [memoizedDate, onDateChange] = useDate();
-
+export function Calendar({ date }) {
   return (
-    <main className="calendar">
-      <h1 className="font-bold text-lg">ShiftPlanning</h1>
-      <Controls className="my-2" {...{ onDateChange }} />
+    <>
       <h2>Calendar</h2>
-      <table>
+      <table className="w-full relative">
         <tbody>
-          <Header week={memoizedDate} />
-          <EmployeeList week={memoizedDate} />
+          <Header week={date} />
+          <EmployeesList week={date} />
         </tbody>
       </table>
-      <br />
-    </main>
+    </>
   );
 }

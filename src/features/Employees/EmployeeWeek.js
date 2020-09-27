@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 
 import { Employee } from "./Employee";
-import { Shift } from "features/Shift/Shift";
+import { Shift } from "features/Shifts/Shift";
 import { TableRow } from "components/Table/Row";
 import { Cell } from "components/Table/Cell";
 

@@ -3,9 +3,12 @@ module.exports = {
   theme: {
     extend: {
       width: {
-         '1/8': '12.5%',
-      }
-    }
+        "1/8": "12.5%",
+      },
+      maxWidth: {
+        container: "1140px",
+      },
+    },
   },
   variants: {},
   plugins: [],
