@@ -1,4 +1,15 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Employee Scheduler
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template so I'm leaving the default README.
+
+Styling is done by [Tailwindcss](https://tailwindcss.com/) so it might seem ugly or strange to someone who's not used to it.
+
+**Missing** in this project: typescript, tests, normalization of data. This is not my best work.
+Reason this is not implemented is mostly because of:
+
+- Lack of time.
+- Never worked with an application that is Dates driven so I had a lot of research to do.
+- Unfamiliarity with data client side normalization libs.
 
 ## Available Scripts
 
