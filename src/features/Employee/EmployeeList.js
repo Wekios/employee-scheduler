@@ -1,17 +1,10 @@
 import React from "react";
-import cn from "classnames";
+import { employees, shifts } from "lib/mock-data";
+
+import { EmployeeWeek } from "./EmployeeWeek";
 
 export function EmployeeList({ week }) {
-  return (
-    <tr>
-      {week.map((day) => (
-        <td
-          className={cn("cell day", { today: day.isToday })}
-          key={day.dateObject.getDate()}
-        >
-          {day.dateObject.toLocaleDateString()}
-        </td>
-      ))}
-    </tr>
-  );
+  return employees.map((employee) => (
+    <EmployeeWeek key={employee.id} {...employee} weekInfo={week} shifts={shifts} />
+  ));
 }
