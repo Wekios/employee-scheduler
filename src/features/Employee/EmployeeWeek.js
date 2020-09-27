@@ -5,11 +5,15 @@ import { Shift } from "features/Shift/Shift";
 import { TableRow } from "components/Table/Row";
 import { Cell } from "components/Table/Cell";
 
-export function EmployeeWeek({ id, firstName, lastName, avatar, weekInfo, shifts }) {
+export function EmployeeWeek({ id, firstName, lastName, avatar, position, weekInfo, shifts }) {
   const weekSchedule = useMemo(
     () =>
       weekInfo.map((day) => {
-        const tbdDay = (shift) => <Cell key={day.weekDay}>{shift}</Cell>;
+        const tbdDay = (shift) => (
+          <Cell isToday={day.isToday} key={day.weekDay}>
+            {shift}
+          </Cell>
+        );
 
         const todaysShifts = shifts.filter(({ date }) => {
           return date === day.date;
@@ -25,9 +29,7 @@ export function EmployeeWeek({ id, firstName, lastName, avatar, weekInfo, shifts
           }
         });
 
-        return employeeShift
-          ? tbdDay(<Shift {...employeeShift}>{employeeShift.name}</Shift>)
-          : tbdDay();
+        return employeeShift ? tbdDay(<Shift {...employeeShift} />) : tbdDay();
       }),
     [id, shifts, weekInfo]
   );
@@ -35,7 +37,7 @@ export function EmployeeWeek({ id, firstName, lastName, avatar, weekInfo, shifts
   return (
     <TableRow>
       <Cell>
-        <Employee {...{ firstName, lastName, avatar }} />
+        <Employee {...{ firstName, lastName, avatar, position }} />
       </Cell>
       {weekSchedule}
     </TableRow>

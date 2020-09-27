@@ -12,6 +12,7 @@ export function Calendar() {
     <main className="calendar">
       <h1 className="font-bold text-lg">ShiftPlanning</h1>
       <Controls className="my-2" {...{ onDateChange }} />
+      <h2>Calendar</h2>
       <table>
         <tbody>
           <Header week={memoizedDate} />
