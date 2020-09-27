@@ -4,12 +4,12 @@ import { Avatar } from "components/Avatar";
 
 export function Employee({ firstName, lastName, avatar, position }) {
   return (
-    <div className="flex flex-wrap flex-col lg:flex-row items-center justify-center">
+    <div className="flex flex-col items-center justify-center">
       <Avatar src={avatar} />
-      <p className="w-3/4 text-sm ml-1">
+      <h3 className="w-3/4 text-sm ml-1">
         {firstName} {lastName}
-      </p>
-      <small className="font-bold">{position.name}</small>
+      </h3>
+      <p className="text-xs font-bold">{position.name}</p>
     </div>
   );
 }

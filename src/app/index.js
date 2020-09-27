@@ -1,7 +1,7 @@
 import React from "react";
 
 import { useDate } from "hooks/useDate";
-import { Calendar, Controls } from "features/Calendar";
+import { Calendar, Controls, Filter } from "features/Calendar";
 import { Container } from "components/Container";
 
 function App() {
@@ -9,13 +9,14 @@ function App() {
 
   return (
     <>
-      <h1 className="font-bold text-lg">ShiftPlanning</h1>
-      <Container as="aside" className="flex">
+      <Container as="aside" className="flex justify-between items-center pt-4">
+        <Filter />
         <Controls className="my-2" {...{ onDateChange }} />
+        <h1 className="font-bold text-lg text-center">ShiftPlanning</h1>
       </Container>
-      <main>
+      <Container as="main">
         <Calendar date={date} />
-      </main>
+      </Container>
     </>
   );
 }

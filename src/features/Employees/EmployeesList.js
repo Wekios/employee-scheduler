@@ -10,7 +10,7 @@ export function EmployeesList({ week }) {
   const employees = useSelector(selectEmployees);
   const shifts = useSelector(selectShifts);
 
-  if (!employees.length || !shifts.length)
+  if (!employees.data.length || !shifts.length)
     return (
       <tr>
         <td colSpan={week.length + 1}>
@@ -19,7 +19,14 @@ export function EmployeesList({ week }) {
       </tr>
     );
 
-  return employees.map((employee) => (
+  // Todo: terribly inelegant
+  if (!!employees.filteredOut.length) {
+    return employees.filteredOut.map((employee) => (
+      <EmployeeWeek key={employee.id} {...employee} weekInfo={week} shifts={shifts} />
+    ));
+  }
+
+  return employees.data.map((employee) => (
     <EmployeeWeek key={employee.id} {...employee} weekInfo={week} shifts={shifts} />
   ));
 }
